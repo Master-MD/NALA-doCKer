@@ -1,0 +1,25 @@
+name: nala-stack
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+  dashy:
+    image: lissy93/dashy:latest
+    restart: unless-stopped
+    ports:
+      - "8085:8080"
+    environment:
+      - TZ=Europe/Zurich
+      - DASHY_CONFIG=/app/public/conf.yml
+    volumes:
+      - ./dashy/conf.yml:/app/public/conf.yml:ro
+      - ./dashy/public:/app/public/custom:rw
+
+volumes:
+  portainer_data:

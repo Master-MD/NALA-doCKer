@@ -1,0 +1,33 @@
+appConfig:
+  title: "NALA Control • local"
+  theme: one-dark
+  language: de
+  disableThemeToggle: true
+  preventNonLocalAccess: true
+  hideComponents: [footer]
+pageInfo:
+  title: "El-Nala • Launcher"
+sections:
+  - name: "Start"
+    icon: "fas fa-rocket"
+    items:
+      - title: "El-Nala Tool Panel"
+        url: "/custom/tools/el_nala_tool_panel.html"
+      - title: "Central Model Hub"
+        url: "/custom/tools/central_model_hub.html"
+  - name: "Control"
+    icon: "fas fa-sliders-h"
+    items:
+      - title: "Portainer"
+        url: "http://127.0.0.1:9000"
+        icon: "fab fa-docker"
+        statusCheck: true
+      - title: "Dashy"
+        url: "http://127.0.0.1:8085"
+        statusCheck: true
+  - name: "LLMs"
+    icon: "fas fa-robot"
+    items:
+      - title: "Ollama API"
+        url: "http://127.0.0.1:11434"
+        statusCheck: true

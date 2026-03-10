@@ -1,0 +1,32 @@
+name: nala-stack
+services:
+  dashy:
+    image: lissy93/dashy:latest
+    restart: unless-stopped
+    ports: ["8085:80"]
+    environment:
+      - NODE_ENV=production
+      - DASHY_CONFIG=/app/public/conf.yml
+    volumes:
+      - ./dashy/conf.yml:/app/public/conf.yml:ro
+      - ./dashy/public:/app/public/custom:rw
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    restart: unless-stopped
+    ports: ["9000:9000"]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports: ["127.0.0.1:11434:11434"]
+    environment: ["TZ=Europe/Zurich"]
+    volumes:
+      - ollama_data:/root/.ollama
+
+volumes:
+  portainer_data:
+  ollama_data:
