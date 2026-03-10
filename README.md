@@ -1,11 +1,18 @@
 # NALA-doCKer
 
-This is the central Docker-based orchestration stack for the NALA ecosystem components.
+<p align="center">
+  <img src="assets/nala-docker-logo.png" alt="NALA-doCKer Logo" width="400"/>
+</p>
+
+## The Vision
+**NALA-doCKer** is the central, reliable orchestration hub of the NALA Ecosystem. It acts as the foundational infrastructure to manage all interconnected local AI applications created by Mike. 
+
+Instead of cluttering the system, the core philosophy follows the **Zero-Redundancy** rule: NALA-doCKer provides a clean, lightweight management layer. It is the central anchor (Local Host) from which the Hub-and-Spoke architecture operates, effortlessly scaling to integrate with Apple edge devices on one side, and heavy network workers (like the Dell T5810 Workstation) on the other.
 
 ## Included Services
 
-- **Portainer** (Port 9000): A lightweight management UI which allows you to easily manage your different Docker environments.
-- **Dashy** (Port 8085): A highly customizable dashboard, which provides an easy-to-use homepage for your server or local setup.
+- **Portainer** (Port 9000): A lightweight management UI which allows you to easily control and oversee all containerized NALA environments.
+- **Dashy** (Port 8085): A highly customizable, deeply integrated dashboard serving as the unified command center and homepage for the entire ecosystem.
 
 ## Getting Started
 
